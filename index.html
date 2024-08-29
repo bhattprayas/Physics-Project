@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensional Formulas Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f3e7;
+            border-left: 6px solid #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Dimensional Formulas Finder</h1>
+        <h1>by</h1>
+        <h1>Prayas Bhatt , Yunish Shrestha , Ritesh Paudel</h1>
+    </header>
+    <div class="container">
+        <label for="quantity">Enter a Physical Quantity:</label>
+        <input type="text" id="quantity" placeholder="e.g., force, velocity, mass">
+        <button onclick="findDimensionalFormula()">Find Dimensional Formula</button>
+        <div id="result" class="result"></div>
+    </div>
+    <script>
+        function findDimensionalFormula() {
+            const quantity = document.getElementById('quantity').value.toLowerCase();
+            let formula = '';
+            switch (quantity) {
+                case 'length':
+                    formula = 'L';
+                    break;
+                case 'mass':
+                    formula = 'M';
+                    break;
+                case 'time':
+                    formula = 'T';
+                    break;
+                case 'electric current':
+                    formula = 'I';
+                    break;
+                case 'temperature':
+                    formula = 'Θ';
+                    break;
+                case 'amount of substance':
+                    formula = 'N';
+                    break;
+                case 'luminous intensity':
+                    formula = 'J';
+                    break;
+                case 'velocity':
+                    formula = 'L T '** (-2);
+                    break;
+                case 'acceleration':
+                    formula = 'L T^-2';
+                    break;
+                case 'force':
+                    formula = 'M L T^-2';
+                    break;
+                case 'work':
+                    formula = 'M L^2 T^-2';
+                    break;
+                case 'power':
+                    formula = 'M L^2 T^-3';
+                    break;
+                case 'pressure':
+                    formula = 'M L^-1 T^-2';
+                    break;
+                case 'density':
+                    formula = 'M L^-3';
+                    break;
+                case 'impulse':
+                    formula = 'M L T^-1';
+                    break;
+                case 'momentum':
+                    formula = 'M L T^-1';
+                    break;
+                case 'electric charge':
+                    formula = 'I T';
+                    break;
+                case 'electric potential':
+                    formula = 'M L^2 T^-3 I^-1';
+                    break;
+                case 'resistance':
+                    formula = 'M L^2 T^-3 I^-2';
+                    break;
+                case 'capacitance':
+                    formula = 'M^-1 L^-2 T^4 I^2';
+                    break;
+                case 'magnetic field':
+                    formula = 'M T^-2 I^-1';
+                    break;
+                case 'magnetic flux':
+                    formula = 'M L^2 T^-2 I^-1';
+                    break;
+                case 'inductance':
+                    formula = 'M L^2 T^-2 I^-2';
+                    break;
+                case 'frequency':
+                    formula = 'T^-1';
+                    break;
+                case 'wave number':
+                    formula = 'L^-1';
+                    break;
+                case 'gravitational constant':
+                    formula = 'M^-1 L^3 T^-2 I^2';
+                    break;
+                case 'surface tension':
+                    formula = 'M T^-2';
+                    break;
+                case 'viscosity':
+                    formula = 'M L^-1 T^-1';
+                    break;
+                case 'thermal conductivity':
+                    formula = 'M L T^-3 Θ^-1';
+                    break;
+                case 'specific heat capacity':
+                    formula = 'L^2 T^-2 Θ^-1';
+                    break;
+                case 'latent heat':
+                    formula = 'M L^2 T^-2 Θ^-1';
+                    break;
+                case 'electromotive force':
+                    formula = 'M L^2 T^-3 I^-1';
+                    break;
+                case 'specific volume':
+                    formula = 'L^3 M^-1';
+                    break;
+                case 'gravitational potential energy':
+                    formula = 'M L^2 T^-2';
+                    break;
+                case 'specific energy':
+                    formula = 'L^2 T^-2';
+                    break;
+                case 'moment of inertia':
+                    formula = 'M L^2';
+                    break;
+                case 'angular momentum':
+                    formula = 'M L^2 T^-1';
+                    break;
+                case 'torque':
+                    formula = 'M L^2 T^-2';
+                    break;
+                case 'angular velocity':
+                    formula = 'T^-1';
+                    break;
+                case 'angular acceleration':
+                    formula = 'T^-2';
+                    break;
+                case 'magnetic field strength':
+                    formula = 'M T^-2 I^-1';
+                    break;
+                case 'electric flux':
+                    formula = 'M L^2 T^-3 I^-1';
+                    break;
+                case 'magnetic flux density':
+                    formula = 'M T^-2 I^-1';
+                    break;
+                case 'electric field strength':
+                    formula = 'M L T^-3 I^-1';
+                    break;
+                case 'inductive reactance':
+                    formula = 'M L^2 T^-3 I^-2';
+                    break;
+                case 'capacitive reactance':
+                    formula = 'M^-1 L^-2 T^4 I^2';
+                    break;
+                case 'relative permeability':
+                    formula = 'dimensionless';
+                    break;
+                case 'permittivity':
+                    formula = 'M^-1 L^-3 T^4 I^2';
+                    break;
+                case 'permeability':
+                    formula = 'M L T^-2 I^-2';
+                    break;
+                case 'enthalpy':
+                    formula = 'M L^2 T^-2';
+                    break;
+                case 'entropy':
+                    formula = 'M L^2 T^-2 Θ^-1';
+                    break;
+                case 'thermal resistance':
+                    formula = 'M^-1 L^-2 T^3 Θ^-1';
+                    break;
+                case 'thermal expansion coefficient':
+                    formula = 'L^-1 Θ^-1';
+                    break;
+                case 'heat capacity':
+                    formula = 'M L^2 T^-2 Θ^-1';
+                    break;
+                case 'specific weight':
+                    formula = 'M L^-2 T^-2';
+                    break;
+
+                default:
+                    formula = 'we dont have that quantity on list.';
+            }
+            document.getElementById('result').innerText = `Dimensional Formula: ${formula}`;
+        }
+    </script>
+</body>
+
+</html>
